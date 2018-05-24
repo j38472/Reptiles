@@ -14,8 +14,8 @@ public class information {
     private String capital_source = null;//资金来源
     private String budget = null;//预算金额
     private String To_the_place = null;//招标地点
-    private String qua_req = null;//            投标资格要求
-    private String acq_tender_doc = null;//    获取招标文件方式
+    private String qua_req = null;// 投标资格要求
+    private String acq_tender_doc = null;// 获取招标文件方式
     private String Validity_period = null;//招标截止日期
     private String bid_opentime = null;//开标时间
     private String Openplace = null;//开标地点
