@@ -13,7 +13,7 @@ import java.sql.Statement;
  * 目前想法：将数据库的链接设计成单例
  * redis 是使用的非切链接池子
  */
-public class linkClose {
+public class LinkClose {
     private static Connection conn = null;
     private static Statement st = null;
 
@@ -21,17 +21,24 @@ public class linkClose {
      * MySql链接
      */
     public Statement mySqlLink() {
-        if (st == null) {
-            String driver = "com.mysql.jdbc.Driver";
-            String url = "jdbc:mysql://localhost/spider";
-            String user = "root";
-            String password = "root";
+        String driver = "com.mysql.jdbc.Driver";
+        String url = "jdbc:mysql://localhost/reptiletentative";
+        String user = "root";
+        String password = "root";
+        if (conn == null) {
             try {
                 Class.forName(driver);
                 conn = DriverManager.getConnection(url, user, password);
-                st = conn.createStatement();
             } catch (Exception e) {
                 System.err.print("链接MySql数据库失败");
+                e.printStackTrace();
+            }
+        }
+        if (st == null) {
+            try {
+                st = conn.createStatement();
+            } catch (Exception e) {
+                System.err.print("转换Statement格式失败");
                 e.printStackTrace();
             }
         }
@@ -51,10 +58,10 @@ public class linkClose {
                 st.close();
                 st = null;
             }
+            System.out.print("MySql数据库已关闭");
         } catch (Exception e) {
             System.err.print("关闭MySql链接失败");
             e.printStackTrace();
-
         }
     }
 
@@ -94,5 +101,6 @@ public class linkClose {
     }
 
     public static void main(String[] arg) {
+
     }
 }

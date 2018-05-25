@@ -3,7 +3,7 @@ package com.pojo;
 /**
  * 规则表的实体类
  */
-public class website {
+public class Website {
     private int id = 0;//数量
     private int pid = 0;// 关联主网站id
     private String crawerurl = null;//入口
@@ -40,6 +40,217 @@ public class website {
     private int contenttype = 0;//判断是否按规则采集1.是2.否（采集全部内容）
     private String pagenextxpath = null;// 下一页xpath规则
     private String pagenextcss = null;// 下一页css规则
+
+    public Website() {//无参构造
+    }
+
+
+    public Website(
+            int id,
+            int pid,
+            String crawerurl,
+            String urlrule,
+            String preurl,
+            String pageone,
+            String bid_numrule,
+            String tend_namerule,
+            String tdreerule,
+            String bagencyrule,
+            String btyperule,
+            String tdcontrule,
+            String capsorrule,
+            String bgetrule,
+            String tplacerule,
+            String valibrule,
+            String qreqrule,
+            String actdrule,
+            String valiprerule,
+            String bopentrule,
+            String opplacerule,
+            String lmrule,
+            String phonerule,
+            String fmrule,
+            String daterule,
+            int state,
+            int issearcher,
+            int urlwebtype,
+            int ruletype,
+            int startenum,
+            int contentwebtype,
+            int pagenum,
+            String allcontentrule,
+            int contenttype,
+            String pagenextxpath,
+            String pagenextcss
+    ) {//有参构造
+        this.id = id;
+        this.pid = pid;
+        this.crawerurl = crawerurl;
+        this.urlrule = urlrule;
+        this.preurl = preurl;
+        this.pageone = pageone;
+        this.bid_numrule = bid_numrule;
+        this.tend_namerule = tend_namerule;
+        this.tdreerule = tdreerule;
+        this.bagencyrule = bagencyrule;
+        this.btyperule = btyperule;
+        this.tdcontrule = tdcontrule;
+        this.capsorrule = capsorrule;
+        this.bgetrule = bgetrule;
+        this.tplacerule = tplacerule;
+        this.valibrule = valibrule;
+        this.qreqrule = qreqrule;
+        this.actdrule = actdrule;
+        this.valiprerule = valiprerule;
+        this.bopentrule = bopentrule;
+        this.opplacerule = opplacerule;
+        this.lmrule = lmrule;
+        this.phonerule = phonerule;
+        this.fmrule = fmrule;
+        this.daterule = daterule;
+        this.state = state;
+        this.issearcher = issearcher;
+
+        this.urlwebtype = urlwebtype;
+        this.ruletype = ruletype;
+        this.startenum = startenum;
+        this.contentwebtype = contentwebtype;
+        this.pagenum = pagenum;
+        this.allcontentrule = allcontentrule;
+        this.contenttype = contenttype;
+        this.pagenextxpath = pagenextxpath;
+        this.pagenextcss = pagenextcss;
+
+
+    }
+
+    public String getLmrule() {
+        return lmrule;
+    }
+
+    public void setLmrule(String lmrule) {
+        this.lmrule = lmrule;
+    }
+
+    public String getPhonerule() {
+        return phonerule;
+    }
+
+    public void setPhonerule(String phonerule) {
+        this.phonerule = phonerule;
+    }
+
+    public String getFmrule() {
+        return fmrule;
+    }
+
+    public void setFmrule(String fmrule) {
+        this.fmrule = fmrule;
+    }
+
+    public String getDaterule() {
+        return daterule;
+    }
+
+    public void setDaterule(String daterule) {
+        this.daterule = daterule;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
+    public int getIssearcher() {
+        return issearcher;
+    }
+
+    public void setIssearcher(int issearcher) {
+        this.issearcher = issearcher;
+    }
+
+    public int getUrlwebtype() {
+        return urlwebtype;
+    }
+
+    public void setUrlwebtype(int urlwebtype) {
+        this.urlwebtype = urlwebtype;
+    }
+
+    public int getRuletype() {
+        return ruletype;
+    }
+
+    public void setRuletype(int ruletype) {
+        this.ruletype = ruletype;
+    }
+
+    public int getStartenum() {
+        return startenum;
+    }
+
+    public void setStartenum(int startenum) {
+        this.startenum = startenum;
+    }
+
+    public int getContentwebtype() {
+        return contentwebtype;
+    }
+
+    public void setContentwebtype(int contentwebtype) {
+        this.contentwebtype = contentwebtype;
+    }
+
+    public int getPagenum() {
+        return pagenum;
+    }
+
+    public void setPagenum(int pagenum) {
+        this.pagenum = pagenum;
+    }
+
+    public String getAllcontentrule() {
+        return allcontentrule;
+    }
+
+    public void setAllcontentrule(String allcontentrule) {
+        this.allcontentrule = allcontentrule;
+    }
+
+    public int getContenttype() {
+        return contenttype;
+    }
+
+    public void setContenttype(int contenttype) {
+        this.contenttype = contenttype;
+    }
+
+    public String getPagenextxpath() {
+        return pagenextxpath;
+    }
+
+    public void setPagenextxpath(String pagenextxpath) {
+        this.pagenextxpath = pagenextxpath;
+    }
+
+    public String getPagenextcss() {
+        return pagenextcss;
+    }
+
+    public void setPagenextcss(String pagenextcss) {
+        this.pagenextcss = pagenextcss;
+    }
+
+    public String getCharset() {
+        return charset;
+    }
+
+    public void setCharset(String charset) {
+        this.charset = charset;
+    }
 
     public int getId() {
         return id;

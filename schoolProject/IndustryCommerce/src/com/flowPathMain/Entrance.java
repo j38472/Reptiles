@@ -1,6 +1,10 @@
 package com.flowPathMain;
 
-import com.database.linkClose;
+import java.util.ArrayList;
+
+import com.database.LinkClose;
+import com.pojo.*;
+import com.test.*;
 
 /**
  * 程序入口
@@ -24,12 +28,30 @@ public class Entrance {
      * 存URL
      */
     public static void main(String[] arg) {
-        linkClose linkClose = new linkClose();
+        TestSql testSql = new TestSql();
+        //获取全部规则的数据集合
+        ArrayList<Website> arrayListWebsite = testSql.getRulesAll();
+        //获取主页面入口URL以及此URL对应的地域
+        ArrayList<ProvinceWebUrl> provinceWebUrlArrayList = testSql.getProvinceweburlAll();
+        //迭代这个集合
+        for (Website Website : arrayListWebsite) {
+            //首先判断这个页面是否要采集
+            if (Website.getState() == 1) {
+                //判断是否为站内搜索
+                if (Website.getIssearcher() == 1) {//站内采集
 
 
-        //关闭数据库的链接
-        linkClose.redisClose();
+                } else {//非站内采集
+
+                }
+            } else {
+                System.out.print("这个页面不需要采集!");
+            }
+        }
+
+        LinkClose linkClose = new LinkClose();
         linkClose.mySqlClose();
+        linkClose.redisClose();
     }
 
 }
